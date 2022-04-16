@@ -11,12 +11,12 @@
 <style>        body {
             background-color: Azure;
         }
+        tr th { width: 10%;}
+        tr td {width: 10%;}
 </style>
 <body>
-
 <img src="{% static "images/Travel Works.png" %}" alt="logo" width="200" height="200">
         <h2 style="padding-left: 15Px">Packages</h2>
-    </div>
     <div>
         <table class="table table-striped table-bordered table-hover">
             <thead>
@@ -28,7 +28,8 @@
                 <th>Rating</th>
             </tr>
             </thead>
-    <div>
+            <tbody>
+            <div>
         <table class="table table-striped table-bordered table-hover">
             {% for package in packages %}
                 <tr>
