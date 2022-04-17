@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+
+{% block title %}
+  {{ package.location }}
+{% endblock %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +18,16 @@
         }
 </style>
 <body>
-                        <img src="{% static "images/Travel Works.png" %}" alt="logo" width="200" height="200">
-    <div class="row">
-        <h2 style="padding-left: 15Px"></h2>
-    </div>
+<img src="{% static "images/Travel Works.png" %}" alt="logo" width="200" height="200">
+
+<h1><b>{{object.location}}</b></h1><h3>Currently: {{object.weather}}</h3>
+<br>
+<h3>{{object.description}}</h3>
+<br>
+<h3>Rating: {{object.rating}}</h3>
+<h3>{{object.start_date}} - {{object.end_date}}</h3><br>
+<h3>${{object.price}}</h3>
+ <button type="submit">Add to Cart</button>
 </body>
+
 {% endblock %}

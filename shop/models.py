@@ -1,6 +1,7 @@
 from django.db import models
 
 from django.utils import timezone
+from django.urls import reverse
 
 
 # Create your models here.
@@ -19,4 +20,7 @@ class Package(models.Model):
         self.save()
 
     def __str__(self):
-        return str(self.pack_number)
+        return str(self.location)
+
+    def get_absolute_url(self):
+        return reverse("product", args=[str(self.id)])
