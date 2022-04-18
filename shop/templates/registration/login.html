@@ -14,6 +14,10 @@
         {% csrf_token %}
         <input type="submit" value="login" style="color: black"/>
         <input type="hidden" name="next" value="{{ next }}"/>
+
+        <a href="{% url 'password_reset' %}" class="btn btn-secondary ml-2">
+                                Forgot Password</a>
+        <input type="hidden" name="next" value="{{ next }}"/>
     </form>
     </div>
 {% endblock %}
