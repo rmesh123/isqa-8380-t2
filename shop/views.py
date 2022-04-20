@@ -15,8 +15,6 @@ from django.template.loader import get_template
 from .models import *
 from .forms import *
 from django.shortcuts import redirect
-from rest_framework.response import Response
-from rest_framework import status
 from django.views.generic import CreateView, ListView
 from django.conf import settings
 from django.http import HttpResponse
