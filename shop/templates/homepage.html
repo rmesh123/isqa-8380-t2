@@ -1,22 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
+    {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<style>        body {
-            background-color: Azure;
-        }
-        tr th { width: 10%;}
-        tr td {width: 10%;}
-</style>
-<body>
-<img src="{% static "images/Travel Works.png" %}" alt="logo" width="200" height="200">
-        <h2 style="padding-left: 15Px">Packages</h2>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+    </head>
+    <style>        body {
+        background-color: Azure;
+    }
+
+    tr th {
+        width: 10%;
+    }
+
+    tr td {
+        width: 10%;
+    }
+    </style>
+    <body>
+    <img src="{% static "images/Travel Works.png" %}" alt="logo" width="200" height="200">
+    <h2 style="padding-left: 15Px">Packages</h2>
     <div>
         <table class="table table-striped table-bordered table-hover">
             <thead>
@@ -30,19 +36,19 @@
             </thead>
             <tbody>
             <div>
-        <table class="table table-striped table-bordered table-hover">
-            {% for package in object_list %}
-                <tr>
-                    <td><a href={{ package.pack_number }}>{{ package.location }}</a></td>
-                    <td>{{ package.price }}</td>
-                    <td>{{ package.start_date }}</td>
-                    <td>{{ package.end_date }}</td>
-                    <td>{{ package.rating }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+                <table class="table table-striped table-bordered table-hover">
+                    {% for package in object_list %}
+                        <tr>
+                            <td><a href={{ package.pack_number }}>{{ package.location }}</a></td>
+                            <td>{{ package.price }}</td>
+                            <td>{{ package.start_date }}</td>
+                            <td>{{ package.end_date }}</td>
+                            <td>{{ package.rating }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
     </body>
     </html>
 {% endblock %}
