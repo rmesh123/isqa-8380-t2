@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-znuglj5od(fp60chjd(d44lt^ztu1n7mp50o3(hv(zzbdb@hqa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -127,6 +127,13 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "isqa8380school@gmail.com"
+EMAIL_HOST_PASSWORD = '8380homework1!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 
 # Default primary key field type
