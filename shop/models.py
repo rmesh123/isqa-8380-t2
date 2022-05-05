@@ -14,6 +14,8 @@ class Package(models.Model):
     end_date = models.DateField(default=timezone.now, blank=True, null=True)
     rating = models.IntegerField(blank=False, null=False)
     weather = models.CharField(max_length=50)
+    lat = models.DecimalField(max_digits=10, decimal_places=4)
+    lng = models.DecimalField(max_digits=10, decimal_places=4)
 
     def created(self):
         self.recent_date = timezone.now()
@@ -89,3 +91,4 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+
