@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'shop',
     'django.contrib.sites',
+    'django.contrib.postgres',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -88,8 +90,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / "db.sqlite3"),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tw',
+        'USER': 'maverick',
+        'PASSWORD': 'maverick1a'
     }
 }
 
@@ -166,3 +170,5 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+django_heroku.settings(locals())
